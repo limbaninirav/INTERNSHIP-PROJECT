@@ -1,0 +1,103 @@
+<aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link " href="/user/manager_dashboard">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed " href="/project/list/">
+ 
+        <span>Projects</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed " href="/project/create/">
+ 
+        <span>Create Project</span>
+      </a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link collapsed " href="/project/create_module/">
+ 
+        <span>Create Project Module</span>
+      </a>
+    </li>
+
+
+    
+    <li class="nav-item">
+      <a class="nav-link collapsed " href="/project/list_module/">
+ 
+        <span>List Project Module</span>
+      </a>
+    </li>
+
+         <li class="nav-item">
+      <a class="nav-link collapsed " href="/project/create_task/">
+ 
+        <span>Create task</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed " href="/project/task_list/">
+ 
+        <span>List task</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed " href="/project/task-assign/">
+ 
+        <span>Assign Task</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed " href="/project/task-assign-list/">
+ 
+        <span>List Assign Task</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed " href="/project/task_status/">
+ 
+        <span>Task Status</span>
+      </a>
+    </li>
+   {% comment %} <li class="nav-item">
+      <a class="nav-link collapsed " href="{% url "report" %}">
+ 
+        <span>Report</span>
+      </a>
+    </li>
+     {% endcomment %}
+
+    </li><!-- End Icons Nav -->
+
+   
+
+   
+
+    <li class="nav-item">
+      <a>
+      <form action="{% url 'logout' %}" method="POST">
+        {% csrf_token %}
+        
+        <button type="submit" class="nav-link collapsed" style="background: none; border: none;">
+          
+          <span>Logout</span>
+        </button>
+      </form>
+    </a>
+    </li><!-- End Login Page Nav -->
+
+  </ul>
+
+</aside>

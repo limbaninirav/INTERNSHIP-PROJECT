@@ -1,0 +1,53 @@
+
+{% extends "../base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="card-body">
+   <h5 class="card-title">Project Module list</h5>
+   
+   <a href = "{% url 'project_module_create' %}" class="btn btn-primary">Create Project Module</a>
+   <div><br>
+   </div>
+
+   <!-- Default Table -->
+   <table class="table">
+     <thead>
+       <tr>
+     
+         <th scope="col">Project Name</th>
+         <th scope="col">Module Name</th>
+         <th scope="col">Estimated Hours</th>
+         <th scope="col">Status</th>
+         <th scope="col">Start Date</th>
+         <th scope="col">Action</th>
+       </tr>
+     </thead>
+     <tbody>
+       {% for project_module in projectmodules %}  
+    
+       <tr>
+           <td>{{project_module.project}}</td>
+           <td>{{project_module.moduleName}}</td>
+           <td>{{project_module.estimatedhours}}</td>
+           <td>{{project_module.status}}</td>
+           <td>{{project_module.startDate}}</td>
+           <td><a href="{% url 'project_module_detail' project_module.id %}" class="btn btn-primary btn-sm" >Detail</a>
+            <a href="{% url 'project_module_update' project_module.id %}" class="btn btn-warning btn-sm" >Update</a>
+            <a href="{% url 'project_module_delete' project_module.id %}" class="btn btn-danger btn-sm" >Delete</a>
+            <a href="{% url 'task_create' %} " class="btn btn-success btn-sm" >Create Task</a>
+             <a href="{% url 'task_views' task.id|default:1 %}" class="btn btn-info btn-sm" btn-sm"> View Task</a> 
+          </td>
+         
+
+
+         </tr>
+
+         {% endfor %}
+
+     </tbody>
+   </table>
+   <!-- End Default Table Example -->
+ </div>
+{% endblock content %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "../base.html" %}
+{% load static %}
+{% block content %}
+<html lang="en">
+  <head>
+   
+  </head>
+  <body>
+    <a href = "{% url 'project_module_create' %}" class ="btn btn-primary">Create Project Module</a>
+  
+<div><br>
+</div>
+    
+    <div class="card" style="width: 18rem;">
+
+<h1> Team Detail </h1>
+<br>
+{% for team_member in team_members %}
+    <li> {{ team_member.username }}</li>
+    <!-- Display other relevant information -->
+{% endfor %}
+
+</div>
+  </body>
+</html>
+{% endblock content %}

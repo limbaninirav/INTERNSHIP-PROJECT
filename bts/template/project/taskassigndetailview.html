@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "../base.html" %}
+{% load static %}
+{% block content %}
+<html lang="en">
+  <head>
+   
+  </head>
+  <body>
+    <a href = "{% url 'project_create' %}" class ="btn btn-primary">Create Project</a>
+  
+<div><br>
+</div>
+    
+    <div class="card" style="width: 18rem;">
+       
+          <h5>Module name = {{Tasks.module}}</h5>
+          <h5>Project name = {{Tasks.project}}</h5>
+          <h5>Description = {{Tasks.description}}</h5>
+          <h5>Status = {{Tasks.status}}</h5>
+          <h5>Total Minute = {{Tasks.totalMinutes}}</h5>
+          
+      </div>
+  </body>
+</html>
+{% endblock content %}

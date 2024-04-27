@@ -1,0 +1,242 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block content %}
+
+
+  <div class="row">
+<div class="col-xxl-4 col-xl-6">
+    <div class="col-lg-14">
+    <div class="card">
+  
+        <div class="filter">
+          
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title">Not Started</h5>
+     
+          <!-- Line Chart -->
+          <div class="card-body">
+            
+<div class= "table-responsive p-20">
+            <!-- Default Table -->
+            <div class="accordion-item">
+
+
+            <table class="table">
+                <thead>
+             
+                  
+                </thead>
+                <tbody>
+                  {% for task in object_list %}
+                  {% if task.task.status == 'Not Started' %}
+                  
+                  <form action ="{% url "Status_update" task.task.id %}"  method='post'>
+                    <div class="card-body">
+                      <h5><div class="card-title">Task Assign To:- {{ username }}<br>
+                        Task name:-{{ task.task }}
+                     
+                     
+                        
+                          {% csrf_token %} 
+                         
+                     
+                         
+                 
+                        <br> Project name:- {{ task.task.project }}<br>  Priority: 
+                        {% if task.task.priority == 'High' %}
+                          <span  class="card-title" style="color: red;">{{ task.task.priority }}</span>
+                        {% elif task.task.priority == 'Low' %}
+                          <span class="card-title" style="color: Green;">{{ task.task.priority }}</span>
+                        {% else %}
+                          {{ task.task.priority }}
+                        {% endif %} <br> Description:- {{ task.task.description }}</h5>
+                      </div>
+                      ------------------------------------------------------------------------------------
+
+                    </form>
+
+                     
+                    </div>
+                    
+          
+                             
+                    {% endif %}
+                                
+                                    
+                                      
+                                    
+                    {% endfor %}
+
+                </tbody>
+              </table>
+            <!-- End Default Table Example -->
+            </div>
+        </div>
+    </div>
+</div>  
+  </div>  
+
+
+</div><!-- End Customers Card -->
+
+  </div><!-- End Customers Card -->
+
+
+  <div class="col-xxl-4 col-xl-6">
+    <div class="col-lg-14">
+    <div class="card">
+  
+        <div class="filter">
+          
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title">In Progress</h5>
+     
+          <!-- Line Chart -->
+          <div class="card-body">
+            
+<div class= "table-responsive p-20">
+            <!-- Default Table -->
+            <div class="accordion-item">
+
+
+            <table class="table">
+                <thead>
+             
+                  
+                </thead>
+                <tbody>
+                  {% for task in object_list %}
+                  {% if task.task.status == 'In Progress' %}
+                  <form action ="{% url "Status_update" task.task.id %}"  method='post'>
+                  <div class="card-body">
+                    <h5><div class="card-title">Task Assign To:- {{ username }}<br>
+                      Task name:-{{ task.task }}
+                      
+                      
+                        {% csrf_token %} 
+                       
+            
+                       
+               
+                      <br> Project name:- {{ task.task.project }}<br>  Priority: 
+                      {% if task.task.priority == 'High' %}
+                        <span  class="card-title" style="color: red;">{{ task.task.priority }}</span>
+                      {% elif task.task.priority == 'Low' %}
+                        <span class="card-title" style="color: Green;">{{ task.task.priority }}</span>
+                      {% else %}
+                        {{ task.task.priority }}
+                      {% endif %} <br> Description:- {{ task.task.description }}</h5>
+                    </div>
+                    ------------------------------------------------------------------------------------
+
+                  </form>
+
+                   
+                  </div>
+                  
+        
+                           
+                  {% endif %}
+                              
+                                  
+                                    
+                                  
+                  {% endfor %}
+
+                </tbody>
+              </table>
+            <!-- End Default Table Example -->
+            </div>
+        </div>
+    </div>
+</div>  
+  </div>  
+
+
+</div><!-- End Customers Card -->
+
+  </div><!-- End Customers Card -->
+
+  <div class="col-xxl-4 col-xl-6">
+    <div class="col-lg-14">
+    <div class="card">
+  
+        <div class="filter">
+          
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title">Testing</h5>
+     
+          <!-- Line Chart -->
+          <div class="card-body">
+            
+<div class= "table-responsive p-20">
+            <!-- Default Table -->
+            
+            <div class="accordion-item">
+
+            <table class="table">
+                <thead>
+             
+                  
+                </thead>
+                <tbody>
+                 
+                  {% for task in object_list %}
+                  {% if task.task.status == 'Testing' %}
+                  
+                    <div class="card-body">
+                      <h5><div class="card-title">Task Assign To:- {{ username }}<br>
+                        Task name:-{{ task.task }}
+                        
+                        
+                           
+              
+                         
+                 
+                        <br> Project name:- {{ task.task.project }}<br>  Priority: 
+                        {% if task.task.priority == 'High' %}
+                          <span  class="card-title" style="color: red;">{{ task.task.priority }}</span>
+                        {% elif task.task.priority == 'Low' %}
+                          <span class="card-title" style="color: Green;">{{ task.task.priority }}</span>
+                        {% else %}
+                          {{ task.task.priority }}
+                        {% endif %} <br> Description:- {{ task.task.description }}</h5>
+                      </div>
+                      ------------------------------------------------------------------------------------
+
+                    </form>
+
+                     
+                    </div>
+                    
+          
+                             
+                    {% endif %}
+                                
+                                    
+                                      
+                                    
+                    {% endfor %}
+
+                </tbody>
+              </table>
+            <!-- End Default Table Example -->
+            </div>
+        </div>
+    </div>
+</div>  
+  </div>  
+
+
+</div><!-- End Customers Card -->
+
+  </div><!-- End Customers Card -->
+
+
+  {% endblock content %}

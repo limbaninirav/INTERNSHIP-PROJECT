@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "../base.html" %}
+{% load static %}
+{% block content %}
+<html lang="en">
+  <head>
+   
+  </head>
+  <body>
+    <a href = "{% url 'task_create' %}" class ="btn btn-primary">Create Task</a>
+  
+<div><br>
+</div>
+    
+    <div class="card" style="width: 18rem;"><!DOCTYPE html>
+
+
+    <h1>Task Details</h1>
+    <br>
+    <h5><strong>Task Name:</strong> {{ task.task_name }}</h5>
+      <h5><strong>Status:</strong> {{ task.status }}</h5>
+        <h5><strong>Description:</strong> {{ task.description }}</h5>
+          <h5><strong>Total Minutes:</strong> {{ task.totalMinutes }}</h5>
+
+  </div>
+</body>
+</html>
+{% endblock content %}
+</body>
+</html>
+

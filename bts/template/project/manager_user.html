@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manager Users</title>
+</head>
+<body>
+    <h1>Manager Users</h1>
+    <ul>
+        {% for user in manager_users %}
+            <li>{{ user.username }} - {{ user.email }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

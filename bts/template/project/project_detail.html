@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "../base.html" %}
+{% load static %}
+{% block content %}
+<html lang="en">
+  <head>
+   
+  </head>
+  <body>
+    <a href = "{% url 'project_create' %}" class ="btn btn-primary">Create Project</a>
+  
+<div><br>
+</div>
+    
+    <div class="card" style="width: 18rem;">
+       
+          <h5>Project name = {{project.name}}</h5>
+          <h5>Technology = {{project.technology}}</h5>
+          <h5>Estimated Hours = {{project.estimated_hours}}</h5>
+          <h5>Start Date = {{project.StartDate}}</h5>
+          <h5>End Date = {{project.endDate}}</h5>
+          
+        
+      </div>
+  </body>
+</html>
+{% endblock content %}

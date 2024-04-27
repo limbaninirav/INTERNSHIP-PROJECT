@@ -1,0 +1,48 @@
+
+{% extends "../base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="card-body">
+   <h5 class="card-title">Assigned Task List</h5>
+   
+   <a href = "{% url 'task_assign' %}" class="btn btn-primary">Task Assign</a>
+   <div><br>
+   </div>
+
+<table class="table">
+    <thead>
+      <tr>
+    
+        <th scope="col">User</th>
+        <th scope="col">Task</th>
+        <th scope="col">Task Detail</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for usertask in usertasks %}  
+   
+      <tr>
+          <td>{{usertask.user}}</td>
+          <td>{{usertask.task}}</td>
+          <td>
+
+             <a href="{% url 'tasks_detail' usertask.id %}" class="btn btn-success btn-sm" >Task Detail</a> 
+             <a href="{% url 'assign_task_delete' usertask.id %}" class="btn btn-danger btn-sm" >Delete</a>
+             
+             
+            </td>
+
+         
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+  </table>
+
+</div>
+{% endblock content %}
