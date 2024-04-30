@@ -6,6 +6,11 @@ class ProjectCreationForm(forms.ModelForm):
     class Meta:
         model = Project
         fields ='__all__'
+        # fields=("name",)
+        widgets = {
+            'StartDate': forms.DateInput(attrs={'type': 'date'}),
+            'endDate': forms.DateInput(attrs={'type': 'date'})
+        }
 
 class ProjectTeamCreationForm(forms.ModelForm):
     class Meta:
@@ -16,7 +21,13 @@ class ProjectTeamCreationForm(forms.ModelForm):
 class ProjectModuleCreationForm(forms.ModelForm):
     class Meta:
         model = ProjectModule
-        fields ='__all__'        
+        fields ='__all__'  
+        widgets = {
+           
+            'startDate': forms.DateInput(attrs={'type': 'date'})
+        }
+
+       
         
 class StatusCreationForm(forms.ModelForm):
     class Meta:

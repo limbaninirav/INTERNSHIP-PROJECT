@@ -63,8 +63,8 @@ class UserLogoutView(LogoutView):
     
 
 def sendMail(to):
-    subject ='Welcome To PMS24'
-    message = 'hope you are enjoying'
+    subject ='Welcome To Project'
+    message = 'Hope you are enjoying'
     recipentList = [to]
     # recipentList = ["exocon789@gmail.com"]
     EMAIL_FROM = settings.EMAIL_HOST_USER

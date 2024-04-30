@@ -4,7 +4,11 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Pages / Login - NiceAdmin Bootstrap Template</title>
+  {% comment %} <title>Pages / Login - NiceAdmin Bootstrap Template</title> {% endcomment %}
+  {% block title %}
+  <title> Manager Login </title>
+  {% endblock title %}
+
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -58,7 +62,9 @@
                 <div class="card-body">
                     
                   <div class="pt-4 pb-2">
+                    {% block r %}
                     <h5 class="card-title text-center pb-0 fs-4">Developer Register</h5>
+                    {% endblock r %}
                     <p class="text-center small">Enter your username &amp; password to login</p>
                   </div>{% block content %}
                   {% endblock content %}

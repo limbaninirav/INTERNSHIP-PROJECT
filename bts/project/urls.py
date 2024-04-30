@@ -25,7 +25,8 @@ urlpatterns = [
   path('task-assign/', AssignTaskView.as_view(), name='task_assign'),
   path("task-assign-list/",AssignTaskListView.as_view(),name="task_assign_list"),
 
-  path("tasks_detail/<int:pk>/", TaskassignDetailView.as_view(), name="tasks_detail"),
+  # path("tasks_detail/<int:pk>/", TaskassignDetailView.as_view(), name="tasks_detail"),
+   path("tasks_detail/<int:pk>/", TaskassignDetailView.as_view(), name="tasks_detail"),
   path("task_delete/<int:pk>/",TaskDelete.as_view(),name="task_delete"),
     path("task_update/<int:pk>/",TaskUpdateView.as_view(),name="task_update"),
       path("assign_task_delete/<int:pk>/",AssignTaskDeleteview.as_view(),name="assign_task_delete"),
